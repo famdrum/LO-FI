@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LO-FI</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, height=device-height">
+		<meta name="keywords" content="music,lo-fi,inspiration,playlist,album,band,fun">
+		<meta name="description" content="This helps you to choose songs and playlists according to your mood">
+		<link href="http://uk.allfont.net/allfont.css?fonts=ds-pixel-cyr" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../static/css/style_music.css">
+		<link rel="shortcut icon" href="../static/icon.ico" type="image/ico">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+	</head>
+	<body>
+		<div class="top">
+			<img src="../static/lo-fi-second.png" class="lo-fi"></img>
+			<div class="background"></div>
+			<div class="cont">
+				<div class="music">
+					{% if valid == 4%}
+						<iframe width="100%" height="20%" scrolling="no" frameborder="no" src="{{final[0]}}"></iframe>
+						<iframe width="100%" height="20%" scrolling="no" frameborder="no" src="{{final[1]}}"></iframe>
+						<iframe width="100%" height="20%" scrolling="no" frameborder="no" src="{{final[2]}}"></iframe>
+						<iframe width="100%" height="20%" scrolling="no" frameborder="no" src="{{final[3]}}"></iframe>
+					{% else %}
+						<span align="center" style="font-family: DS Pixel Cyr; font-size: 40px; color: rgb(81,49,118);">Not Found</span>
+					{% endif %}
+				</div>
+				<img src="../static/phone.png" class="hand"></img>
+			</div>
+			<img src="../static/cloud.png" class="cloud"></img>
+			<img src="../static/cloud1.png" class="cloud1"></img>
+			<div class="text">
+				<div id="text1"><span class="text1">YOUR PLAYLIST</span></div>
+				<div><span class="text2">DON'T FORGET YOUR HEADPHONES</span></div>
+				<div class="button">RETURN</div>
+			</div>
+		</div>
+		<script>
+			if($(window).width() >= 769){
+				$(document).ready(function() {
+					$('.background').delay(1000).animate({opacity: '1'}, 1000, function(){
+						$('.cont').animate({left: '61%'}, 800, function(){
+							$('.cont').animate({left: '64%'}, 300);
+							$('.music').delay(1000).animate({opacity: '1'}, 500);
+						});
+						$('.cloud').delay(1000).animate({left: '74%'}, 600, function(){
+							$('.cloud').animate({left: '76%'}, 300, function(){
+								$('.cloud').delay(5000).animate({left: '75%'}, 300,function(){
+									$('.cloud').animate({left: '100%'}, 600, function(){
+										$('.cloud1').delay(1000).animate({left: '75%'}, 600, function(){
+											$('.cloud1').animate({left: '76%'}, 300);
+										});
+									});
+								});
+							});
+						});
+						$('.text').animate({top: '48%'}, 800, function(){
+							$('.text').animate({top: '50%'}, 300);
+							$('.lo-fi').animate({top:'80%'}, 1200, function(){
+								$('.lo-fi').animate({top:'75%'}, 500, function(){
+									$('.lo-fi').css('animation-name', 'cloud');
+								});
+							})
+						})
+					});
+					$('.button').click(function(){
+						window.history.back()
+					})
+				})
+			}else{
+				$('.button').click(function(){
+						window.history.back()
+					})
+			}
+		</script>
+	</body>
+</html>

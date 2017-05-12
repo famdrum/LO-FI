@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LO-FI</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+		<meta name="keywords" content="music,lo-fi,inspiration,playlist,album,band,fun">
+		<meta name="description" content="This helps you to choose songs and playlists according to your mood">
+		<link href="http://uk.allfont.net/allfont.css?fonts=ds-pixel-cyr" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../static/css/style.css">
+		<link rel="shortcut icon" href="../static/icon.ico" type="image/ico">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+	</head>
+	<body>
+		<div class="cover"></div>
+		<video autoplay id="intro" poster="../static/background.png">
+			<source src="../static/lo-fi.mp4" type="video/mp4">
+		</video>
+		<div class="nav">
+			<div class="info">
+				<a class="menu" href="#about" id="link1">About</a>
+				<div class="button"></div>
+			</div>
+			<img src="../static/lo-fi back.png" class="back"></img>
+			<div class="info">
+				<a class="menu" href="#contact" id="link2">Contact</a>
+				<div class="button"></div>
+			</div>
+		</div>
+		<div class="greet">
+			<span class="greet1">LO-FI</span>
+			<span class="greet2">We will find something for you</span>
+		</div>
+		<div id="start"><img src="../static/start.png" class="start"></img></div>
+		<div class="work">
+			<img src="../static/lo-fi yay.png"></img>
+			<div class="form">
+				<span>SO... HOW ARE YOU?</span>
+				<span>DESCRIBE YOUR MOOD IN ONE WORD</span>
+				<span>AND WE WILL FIND STH FOR YOU</span>
+				<hr>
+				<form action="" method="POST">
+					<input type="text" name="mood"></input><br>
+					<input type="submit" value="SEND"></input>
+				</form>
+				<hr>
+			</div>
+		</div>
+		<div id="cont"><h1 id="about">About</h1></div>
+		<div class="content">
+			<img src="../static/about.png"></img>
+			<div class="fix1">
+				<span>What's the use of LO-FI?</span>
+				<span>We will help you to choose songs and <br>playlists according to your mood</span>
+				<span>What's LO-FI?</span>
+				<span>That weird creature on your left</span>
+			</div>
+		</div>
+		<div id="cont"><h1 id="contact">Contact</h1></div>
+		<div class="contacts">
+			<a href="mailto:o.kozak@ucu.edu.ua" class="google"><img src="../static/google.png"></img></a>
+			<a href="https://www.facebook.com/oles.kozak.3"><img src="../static/facebook.png"></img></a>
+			<a href="https://vk.com/id286294530"><img src="../static/vk.png"></img></a>
+			<a href="https://www.instagram.com/famdrum/"><img src="../static/instagram.png"></img></a>
+		</div>
+		<script>
+			$(document).ready(function() {
+				if($(window).width() >= 769){
+					var height = $(window).height();
+					$('video').css('height', height);
+					$('video').bind("ended", function() {
+						$('video').fadeOut(function() {
+							$('body, html').css("overflow", "visible");
+							$('.nav').css('bottom', '0');
+							$('.greet').css('opacity', '1');
+							$('.start').css('right', '0');
+						});
+						$('.cover').fadeOut();
+					});
+					$('video').click(function() {
+						$('video').fadeOut(function() {
+							$('body, html').css("overflow", "visible");
+							$('.nav').css('bottom', '0');
+							$('.greet').css('opacity', '1');
+							$('.start').css('right', '0');
+						});
+						$('.cover').fadeOut();
+					})
+					$(window).scroll(function() {
+						var sth = $(this).scrollTop();
+						if(sth >= 700 && sth <= 1000){
+							$('.work img').css("animation-name", "lo-fi");
+						}else if(sth < 300 || sth > 1400){
+							$('.work img').css("animation-name", "none");
+						}
+						if(sth >= 1400){
+							$('.fix1').slideDown();
+							$('.content img').fadeIn();
+						}else if(sth < 1400){
+							$('.fix1').slideUp();
+							$('.content img').fadeOut();
+						}
+					})
+					$('#link1').click(function() {
+						$('body').animate({scrollTop: $("#about").offset().top}, 1000);
+					})
+					$('#link2').click(function() {
+						$('body').animate({scrollTop: $("#contact").offset().top}, 1000);
+					})
+				}
+			})
+		</script>
+	</body>
+</html>

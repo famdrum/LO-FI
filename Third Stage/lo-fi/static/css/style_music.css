@@ -1,0 +1,235 @@
+@media screen and (min-width: 769px){
+	body, html{
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		overflow: hidden;
+	}
+	.top{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.cont{
+		z-index: 8;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		left: 120%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+	}
+	.lo-fi {
+		z-index: 4;
+		position: absolute;
+		width: 13%;
+		left: 37%;
+		top: -20%;
+		transform: translate(-50%,-50%);
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-delay: 0.25s;
+	}
+	@keyframes cloud{
+		50% {top: 80%;}
+		100% {top: 75%;}
+	}
+	.background{
+		opacity: 0;
+		z-index: 1;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(189,222,230);
+	}
+	.hand{
+		position: absolute;
+		z-index: 2;
+		width: 21%;
+	}
+	.cloud{
+		position: absolute;
+		z-index: 3;
+		width: 20%;
+		left: 100%;
+		top: 25%;
+		animation-duration: 7s;
+		animation-delay: 5s;
+	}
+	.music{
+		height: 67%;
+		margin-left: 0.25%;
+		width: 15%;
+		z-index: 3;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: column;
+	}
+	.cloud1{
+		position: absolute;
+		z-index: 3;
+		width: 22%;
+		left: 100%;
+		top: 25%;
+		animation-duration: 7s;
+		animation-delay: 5s;
+	}
+	.text{
+		margin-left: 2%;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		width: 47%;
+		height: 50%;
+		z-index: 4;
+		top: 130%;
+		left: 25%;
+		transform: translate(-50%,-50%);
+	}
+	#text1{
+		margin-bottom: 2%;
+	}
+	.text1{
+		display:inline-block;
+		font-family: DS Pixel Cyr;
+		font-size: 75px;
+		color: rgb(175,129,186);
+		background-color: white;
+		padding: 10px;
+	}
+	.text2{
+		display:inline-block;
+		font-family: DS Pixel Cyr;
+		font-size: 40px;
+		color: rgb(81,49,118);
+		background-color: white;
+		padding: 10px;
+	}
+	.button{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		margin-top: 2%;
+		height: 70px;
+		width: 200px;
+		background-color: rgb(81,49,118);
+		font-family: DS Pixel Cyr;
+		font-size: 35px;
+		color: white;
+		transition: all 0.5s;
+	}
+	.button:hover{
+		opacity: 0.8;
+	}
+	.phone{
+		display: none;
+	}
+}
+@media screen and (max-width: 768px){
+	body, html{
+		margin: 0;
+		padding: 0;
+		background-color: rgb(189,222,230);
+	}
+	.main{
+		display: none;
+	}
+	.background{
+		display: none;
+	}
+	.cloud1{
+		display: none;
+	}
+	.cloud{
+		display: none;
+	}
+	.lo-fi{
+		display: none;
+	}
+	.text{
+		margin-bottom: 5%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.top{
+		position: absolute;
+		min-width: 100%;
+		height: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: auto;
+		height: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column-reverse;
+	}
+	#text1{
+		margin-bottom: 2%;
+		width: 100%;
+	}
+	.text1{
+		text-align: center;
+		display:inline-block;
+		font-family: DS Pixel Cyr;
+		font-size: 250%;
+		color: rgb(175,129,186);
+		background-color: white;
+		padding: 10px;
+	}
+	.text2{
+		display:none;
+	}
+	.button{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		margin-top: 2%;
+		height: 50px;
+		width: 40%;
+		background-color: rgb(81,49,118);
+		font-family: DS Pixel Cyr;
+		font-size: 150%;
+		color: white;
+		transition: all 0.5s;
+	}
+	.button:hover{
+		opacity: 0.8;
+	}
+	.music{
+		flex-direction: column;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		height: 50%;
+		margin-left: 0.25%;
+		width: 30%;
+		z-index: 3;
+		position: absolute;
+	}
+	.cont{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+	.hand{
+		z-index: 2;
+		width: 50%;
+	}
+}
