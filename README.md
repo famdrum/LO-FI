@@ -1,5 +1,2 @@
 # LO-FI
-1. Етап №1 +
-2. Етап №2 +
-3. Етап №3 +
-4. Етап №4 +
+Video Presentation: https://www.youtube.com/watch?v=X6YTCnjCFTE 
